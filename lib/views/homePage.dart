@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_example/providers/homeController.dart';
 import 'package:provider_example/utils/margin.dart';
@@ -88,17 +87,17 @@ class _BuildFabs extends StatelessWidget {
       ),
       XMargin(20),
       FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async => await inputDialog(context),
         child: Icon(
-          Icons.edit,
+          Icons.add,
           color: Colors.white,
         ),
         backgroundColor: Colors.grey[700],
       ),
       const XMargin(20),
       IconButton(
-        onPressed: () async => await inputDialog(context),
-        icon: Icon(Icons.add, color: Colors.grey[700]),
+        onPressed: null,
+        icon: Icon(Icons.edit, color: Colors.grey[700]),
       ),
     ]);
   }
