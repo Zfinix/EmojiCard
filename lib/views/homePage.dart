@@ -23,21 +23,27 @@ class MyHomePage extends StatelessWidget {
       ),
       drawer: Drawer(),
       body: Center(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             const YMargin(10),
-            Text(
-              'Good Morning!',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 23,
-                  fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Good Morning!',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-            const YMargin(20),
+            const YMargin(10),
             const _SearchField(),
             _Slider(),
-            const YMargin(20),
+            const YMargin(10),
             const _BuildFabs(),
+            const YMargin(10),
           ],
         ),
       ),
@@ -59,6 +65,9 @@ class _SearchField extends StatelessWidget {
       ),
       child: TextField(
         textAlign: TextAlign.center,
+        onTap: () {
+          controller.isSearching = true;
+        },
         onChanged: (val) {
           controller.isSearching = true;
           if (controller.isSearching && val.isNotEmpty) {

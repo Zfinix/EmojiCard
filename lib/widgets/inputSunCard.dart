@@ -10,14 +10,22 @@ Future inputDialog(_) {
   return showDialog(
     context: _,
     builder: (_) => Container(
-      height: MediaQuery.of(_).size.height * 0.89,
       child: new BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Dialog(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0)),
-            backgroundColor: Colors.black54,
-            child: const _BuildCard(),
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 5),
+          child: Container(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Expanded(
+                  child: Dialog(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0)),
+                    backgroundColor: Colors.black54,
+                    child: const _BuildCard(),
+                  ),
+                ),
+              ],
+            ),
           )),
     ),
   );
@@ -29,7 +37,7 @@ class _TitleField extends StatelessWidget {
   Widget build(BuildContext context) {
     var controller = Provider.of<HomeController>(context);
     return new Container(
-      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
@@ -62,7 +70,7 @@ class _Subtitle extends StatelessWidget {
   Widget build(BuildContext context) {
     var controller = Provider.of<HomeController>(context);
     return new Container(
-      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
@@ -130,7 +138,6 @@ class _BuildCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var controller = Provider.of<HomeController>(context);
     return Container(
-        height: MediaQuery.of(context).size.height * 0.46,
         decoration: new BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             color: Colors.white,
@@ -153,7 +160,7 @@ class _BuildCard extends StatelessWidget {
                 _TitleField(),
                 const YMargin(5),
                 _Subtitle(),
-                const YMargin(20),
+                const YMargin(10),
                 Container(
                   width: double.infinity,
                   height: 40,
