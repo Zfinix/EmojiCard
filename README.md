@@ -4,9 +4,9 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+A sample Fun Example Project using Provider to handle State Management .
 
-A few resources to get you started if this is your first Flutter project:
+A few screenshots:
 
 <p float="left">
   <img src="https://raw.githubusercontent.com/Zfinix/EmojiCard/master/screenshot/shot1.png" width="250" />
