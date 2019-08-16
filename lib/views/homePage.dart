@@ -15,6 +15,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         brightness: Brightness.light,
+        centerTitle: true,
         elevation: 0,
         title: Image.asset(
           'assets/sun.png',
